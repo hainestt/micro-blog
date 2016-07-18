@@ -1,0 +1,38 @@
+<%- include header.ejs%>
+<form method="post" class="form-horizontal" action="/edit/<%=post.name%>/<%=post.time.day%>/<%=post.title%>">
+    <fieldset>
+        <legend>编辑文章</legend>
+        <div class="control-group">
+            <label class="control-label" for="title">标题：</label>
+            <input type="text" name="title" id="title" value="<%=post.title%>" disabled="disabled" class="form-control" />
+        </div>
+        <div class="control-group">
+            <p>标签：</p>
+            <label>
+                <input type="text" name="tags"  value="<%=post.tags[0]%>" disabled="disabled" class="form-control" />
+            </label>
+            <label>
+                <input type="text" name="tags"  value="<%=post.tags[1]%>" disabled="disabled" class="form-control" />
+            </label>
+            <label>
+                <input type="text" name="tags"  value="<%=post.tags[2]%>" disabled="disabled" class="form-control" />
+            </label>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="post">内容：</label>
+            <textarea name="post" id="post" class="form-control" rows="20">
+                <%=post.post%>
+            </textarea>
+        </div>
+
+        <div class="control-group">
+            <button type="submit" class="btn btn-info btn-block ">保存修改</button>
+        </div>
+    </fieldset>
+</form>
+
+<footer>
+    <p><a href="http://www.haines.com/" target="_blank">haines</a> 2016</p>
+</footer>
+
+<%- include footer.ejs%>

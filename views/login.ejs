@@ -1,0 +1,32 @@
+<%- include header.ejs%>
+    <!-- content-->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form class="form form-horizontal" method="post">
+                <fieldset>
+                    <legend>用户登录</legend>
+                    <div class="form-group">
+                        <label for="username" class="control-label col-md-2">用户名</label>
+                        <input type="text" class="form-control-static col-md-2" name="username" id="username"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label col-md-2">输入密码</label>
+                        <input type="password" class="form-control-static col-md-2" name="password" id="password"/>
+                    </div>
+                    <!--<div class="jumbotron">-->
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">登录</button>
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    <footer>
+        <p><a href="http://www.haines.com/" target="_blank">haines</a> 2016</p>
+    </footer>
+
+<%- include footer.ejs%>

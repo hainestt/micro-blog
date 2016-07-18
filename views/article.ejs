@@ -1,0 +1,29 @@
+<%- include header.ejs %>
+
+<% if(user && (user.name==post.name)){%>
+    <div class="btn-group">
+        <a href="/edit/<%=post.name%>/<%=post.time.day%>/<%=post.title%>" class="btn btn-primary">编辑</a>
+    </div>
+    <div class="btn-group">
+        <a href="/remove/<%=post.name%>/<%=post.time.day%>/<%=post.title%>" class="btn btn-primary">删除</a>
+    </div>
+<%}%>
+
+<p class="text-muted" style="margin-top: 20px;">
+    作者：<a href="/u/<%=post.name%>"><%= post.name %></a> ｜
+    日期：<%= post.time.minute%> <br/><br/>
+    <% post.tags.forEach(function(tag,index){%>
+    <% if(tag){%>
+    <a class="label label-info" href="/tags/<%=tag%>"><%=tag%></a>
+    <%}%>
+    <%})%>
+</p>
+<div class="text-justify" >
+    <p><%- post.post %></p>
+    <blockquote>阅读：<%=post.pv%> | 评论：<%=post.comments.length%></blockquote>
+
+</div>
+
+
+<%- include comment.ejs%>
+<%- include footer.ejs %>

@@ -1,0 +1,47 @@
+<!--header-->
+<%- include header.ejs%>
+<!--end header-->
+        <% if(!user) {%>
+        <div class="jumbotron">
+            <h1 class="h1">欢迎来到Microblog</h1>
+            <p>Microblog 是一個基於 Node.js 的微博系統。</p>
+            <a class="btn btn-primary btn-large" href="/login">登录</a>
+            <a class="btn btn-default btn-large" href="/reg">立即注册</a>
+        </div>
+        <% }else{ %>
+            <br/>
+            <% posts.forEach(function(post,index){
+            if(index % 3==0){%>
+            <div class="row">
+                <%}%>
+                <div class="col-md-4 col-sm-4">
+                    <h2 class="h2"><a href="/u/<%= post.name%>/<%=post.time.day%>/<%=post.title%>"><%=post.title%></a></h2>
+                    <blockquote style="font-size: 12px;">
+                        作者：<a href="/u/<%=post.name%>"><%= post.name %></a> ｜
+                        日期：<%= post.time.minute%> <br/><br/>
+                        <% post.tags.forEach(function(tag,index){%>
+                            <% if(tag){%>
+                            <a class="label label-info" href="/tags/<%=tag%>"><%=tag%></a>
+                            <%}%>
+                        <%})%>
+
+                    </blockquote>
+
+                    <p> <%-post.post%> </p>
+                    <blockquote>阅读：<%=post.pv%> | 评论：<%=post.comments.length%></blockquote>
+                </div>
+                <% if(index % 3==2){%>
+            </div>
+            <%}%>
+            <%}) %>
+        <br/>
+        <%}%>
+
+    <!--<footer>-->
+      <!--<p><a href="http://www.haines.com/" target="_blank">haines</a> 2016</p>-->
+    <!--</footer>-->
+
+<!-- footer-->
+<%- include paging.ejs%>
+<%- include footer.ejs%>
+

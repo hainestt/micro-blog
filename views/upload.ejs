@@ -1,0 +1,25 @@
+<%- include header.ejs%>
+
+    <form action="/upload" method="post" enctype="multipart/form-data" class="form-horizontal ">
+        <fieldset>
+            <legend>文件上传</legend>
+            <div class="control-group">
+                <!--<label for="filed1">选择文件</label>-->
+                <input type="file" id="filed1" name="filed1"/>
+            </div>
+
+            <div class="control-group">
+                <div class="col-md-10 col-md-offset-10">
+                    <button type="submit" class="btn btn-primary btn-lg">上&nbsp;&nbsp;传</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+
+
+    <footer>
+        <p><a href="http://www.haines.com/" target="_blank">haines</a> 2016</p>
+    </footer>
+
+<%- include footer.ejs%>

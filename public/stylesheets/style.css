@@ -1,0 +1,28 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+img{
+    max-width: 320px;
+}
+img[title='markdown']{
+    width: 340px ;
+}
+p{
+    font-size: 15px;
+}
+.control-group{
+    margin-bottom: 10px;
+}
+.label {
+    font-size: 12px !important;
+}
+ul>li{
+   list-style: none;
+}
+textarea{
+    text-indent: 0 !important;
+}
+.form-group{
+    margin-top: 5%;
+}

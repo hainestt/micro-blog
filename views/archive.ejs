@@ -1,0 +1,21 @@
+<%- include header.ejs%>
+
+<div class="list-group">
+    <% var lastYear=0%>
+    <% posts.forEach(function(post,index){ %>
+        <% if(lastYear != post.time.year){%>
+        <a class="list-group-item active">
+            <h3 class="list-group-item-heading"><%= post.time.year%>年</h3>
+        </a>
+        <% lastYear=post.time.year } %>
+        <div class="list-group-item">
+            <div class="list-group-item-heading">
+                <a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title%>"><%= post.title%></a>
+                <span class="badge pull-right"><%= post.time.monthDate%></span>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<%- include footer.ejs%>
+
